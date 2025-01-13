@@ -1,0 +1,16 @@
+{
+	"about": "À propos",
+	"projects": "Mes travaux",
+	"contact": "Contact",
+	"developer": "Développeur Web",
+	"about.title": "À propos de moi",
+	"about.description": "Développeur web motivé et curieux, je suis spécialisé dans la conception d'applications web responsive et intuitives. Fort d'une expertise dans les technologies JavaScript, React et Node.js, je suis toujours à la recherche de nouveaux défis pour repousser les limites du développement et proposer des solutions innovantes. Mon ambition ? Mettre à profit mes compétences sur des projets ambitieux, innovants et porteurs de sens dans un environnement collaboratif, où l'innovation et l'apprentissage sont au cœur de la mission. Actuellement à la recherche d'un alternance sur les régions de Lens et Lille, je suis prêt à rejoindre une équipe dynamique pour contribuer à des projets passionnants. Disponible à partir de septembre 2025, j'ai hâte d'apporter ma créativité et mon énergie tout en poursuivant mon évolution professionnelle.",
+	"projects.title": "Mes Projets",
+	"projects.introduction": "Animé par une passion pour le développement web, je mets un point d'honneur à transformer des concepts en applications modernes et fonctionnelles. En tirant parti de technologies avancées comme React, TypeScript, Next.js et Express, je crée des solutions robustes et centrées sur l’utilisateur. En formation, notre formateur nous a inculqué la rigueur et l’excellence, en nous encourageant à toujours viser le step supplémentaire pour nous démarquer. Chaque projet est pour moi une occasion d’explorer de nouvelles approches, d’affiner mes compétences et d’apporter des réponses concrètes aux problématiques rencontrées. Mon objectif est de concevoir des expériences fluides et performantes, tout en restant en phase avec les tendances technologiques et les standards de qualité du secteur.",
+	"contact.title": "Contactez-moi",
+	"contact.name": "Nom",
+	"contact.email": "Email",
+	"contact.message": "Message",
+	"contact.send": "Envoyer",
+	"footer.rights": "Tous droits réservés"
+}
