@@ -18,7 +18,7 @@ export default function Header() {
 
 					<div className="justify-self-center flex flex-col items-center">
 						<img
-							src="/src/assets/images/profile.jpg"
+							src="/images/profile.jpg"
 							alt="Damien Baczkiewicz"
 							className="w-32 h-32 rounded-full mb-4 object-cover border-4 border-blue-500 dark:border-blue-400 shadow-lg"
 						/>
