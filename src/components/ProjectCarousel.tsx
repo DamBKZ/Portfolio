@@ -29,7 +29,7 @@ export default function ProjectCarousel() {
 	};
 
 	return (
-		<div className="max-w-4xl mx-auto px-4">
+		<section className="max-w-4xl mx-auto px-4">
 			<h2 className="text-3xl font-bold mb-12 text-center dark:text-white">
 				{t("projects.title")}
 			</h2>
@@ -38,33 +38,35 @@ export default function ProjectCarousel() {
 			</p>
 			<Slider {...settings}>
 				{projects.map((project) => (
-					<div key={project.id} className="px-2">
-						<div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+					<section key={project.id} className="px-2">
+						<section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
 							<a
 								href={project.github}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="block relative group"
 							>
-								<img
-									src={project.image}
-									alt={project.title}
-									className="w-screen h-64 object-cover transition-opacity duration-300 group-hover:opacity-75 "
-								/>
-								<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
+								<section className="w-full h-64 flex justify-center items-center overflow-hidden bg-gray-100 dark:bg-gray-700">
+									<img
+										src={project.image}
+										alt={project.title}
+										className="w-auto h-full object-contain"
+									/>
+								</section>
+								<section className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
 									<span className="text-white text-lg font-semibold">
 										Voir sur GitHub
 									</span>
-								</div>
+								</section>
 							</a>
-							<div className="p-6">
+							<section className="p-6">
 								<h3 className="text-xl font-bold mb-2 dark:text-white">
 									{project.title}
 								</h3>
 								<p className="text-gray-600 dark:text-gray-300 mb-4">
 									{project.description}
 								</p>
-								<div className="flex flex-wrap gap-2">
+								<section className="flex flex-wrap gap-2">
 									{project.technologies.map((tech) => (
 										<span
 											key={tech}
@@ -73,12 +75,12 @@ export default function ProjectCarousel() {
 											{tech}
 										</span>
 									))}
-								</div>
-							</div>
-						</div>
-					</div>
+								</section>
+							</section>
+						</section>
+					</section>
 				))}
 			</Slider>
-		</div>
+		</section>
 	);
 }

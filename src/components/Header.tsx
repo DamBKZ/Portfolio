@@ -10,13 +10,13 @@ export default function Header() {
 
 	return (
 		<header className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
-			<div className="container mx-auto px-4 py-8">
-				<div className="grid grid-cols-3 items-center">
-					<div className="justify-self-start">
+			<section className="container mx-auto px-4 py-8">
+				<section className="grid grid-cols-3 items-center">
+					<section className="justify-self-start">
 						<TechStack />
-					</div>
+					</section>
 
-					<div className="justify-self-center flex flex-col items-center">
+					<section className="justify-self-center flex flex-col items-center">
 						<img
 							src="/images/Profile.jpg"
 							alt="Damien Baczkiewicz"
@@ -28,7 +28,7 @@ export default function Header() {
 						<p className="text-xl text-gray-600 dark:text-gray-300">
 							{t("developer")}
 						</p>
-					</div>
+					</section>
 
 					<nav className="justify-self-end flex items-center space-x-6">
 						<Link
@@ -78,8 +78,8 @@ export default function Header() {
 							<Languages className={darkMode ? "text-white" : ""} />
 						</button>
 					</nav>
-				</div>
-			</div>
+				</section>
+			</section>
 		</header>
 	);
 }

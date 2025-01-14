@@ -5,7 +5,7 @@ export default function ContactForm() {
 	const { t } = useLanguage();
 
 	return (
-		<div className="max-w-2xl mx-auto">
+		<section className="max-w-2xl mx-auto">
 			<h2 className="text-3xl font-bold mb-8 text-center dark:text-white">
 				{t("contact.title")}
 			</h2>
@@ -15,7 +15,7 @@ export default function ContactForm() {
 				encType="text/plain"
 				className="space-y-6"
 			>
-				<div>
+				<section>
 					<label
 						htmlFor="name"
 						className="block text-sm font-medium dark:text-white"
@@ -29,8 +29,8 @@ export default function ContactForm() {
 						required
 						className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 					/>
-				</div>
-				<div>
+				</section>
+				<section>
 					<label
 						htmlFor="email"
 						className="block text-sm font-medium dark:text-white"
@@ -44,8 +44,8 @@ export default function ContactForm() {
 						required
 						className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 					/>
-				</div>
-				<div>
+				</section>
+				<section>
 					<label
 						htmlFor="message"
 						className="block text-sm font-medium dark:text-white"
@@ -59,7 +59,7 @@ export default function ContactForm() {
 						required
 						className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 					/>
-				</div>
+				</section>
 				<button
 					type="submit"
 					className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
@@ -68,7 +68,7 @@ export default function ContactForm() {
 				</button>
 			</form>
 
-			<div className="mt-8 flex justify-center space-x-9 pt-10">
+			<section className="mt-8 flex justify-center space-x-9 pt-10">
 				<a
 					href="https://github.com/DamBKZ"
 					target="_blank"
@@ -93,7 +93,7 @@ export default function ContactForm() {
 				>
 					<FileDown size={24} />
 				</a>
-			</div>
-		</div>
+			</section>
+		</section>
 	);
 }
