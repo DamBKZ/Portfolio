@@ -6,7 +6,7 @@ export const projects: Project[] = [
 		title: "Le Juste Prix - C'est plus, c'est moins",
 		description:
 			"Petit projet en JS pour deviner un nombre compris entre 1 et 100",
-		image: "/src/images/Juste-prix.png",
+		image: "/src/assets/images/Juste-prix.png",
 		technologies: ["JavaScript"],
 		github: "https://github.com/DamBKZ/Le-juste-prix",
 	},
