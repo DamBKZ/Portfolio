@@ -31,7 +31,7 @@ export default function ProjectCarousel() {
 	};
 
 	return (
-		<section className="max-w-4xl mx-auto px-4 py-9">
+		<section className="max-w-4xl mx-auto px-4">
 			<h2 className="text-3xl font-bold mb-12 text-center dark:text-white">
 				{t("projects.title")}
 			</h2>
