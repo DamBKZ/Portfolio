@@ -14,13 +14,13 @@ export default function App() {
 					<Header />
 
 					<main className="pt-52 px-4">
-						<section id="about" className="min-h-[70vh] py-36">
+						<section id="about" className="min-h-[70vh] py-40">
 							<div className="container mx-auto">
 								<About />
 							</div>
 						</section>
 
-						<section id="projects" className="min-h-screen py-8">
+						<section id="projects" className="min-h-screen py-0">
 							<div className="container mx-auto">
 								<ProjectCarousel />
 							</div>

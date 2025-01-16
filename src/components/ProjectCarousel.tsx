@@ -7,6 +7,8 @@ import { useLanguage } from "../context/LanguageContext";
 export default function ProjectCarousel() {
 	const { t } = useLanguage();
 
+	const introductionParagraphs = t("projects.introduction").split("\n\n");
+
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -29,13 +31,17 @@ export default function ProjectCarousel() {
 	};
 
 	return (
-		<section className="max-w-4xl mx-auto px-4">
+		<section className="max-w-4xl mx-auto px-4 py-9">
 			<h2 className="text-3xl font-bold mb-12 text-center dark:text-white">
 				{t("projects.title")}
 			</h2>
-			<p className="text-gray-600 dark:text-gray-300 text-justify mb-12 max-w-3xl mx-auto">
-				{t("projects.introduction")}
-			</p>
+			<section className="text-gray-600 dark:text-gray-300 text-justify mb-12 max-w-3xl mx-auto">
+				{introductionParagraphs.map((paragraph) => (
+					<p key={paragraph.slice(0, 20)} className="mb-4">
+						{paragraph}
+					</p>
+				))}
+			</section>
 			<Slider {...settings}>
 				{projects.map((project) => (
 					<section key={project.id} className="px-2">
