@@ -10,7 +10,7 @@ export default function App() {
 	return (
 		<ThemeProvider>
 			<LanguageProvider>
-				<div className="min-h-screen bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+				<div className="min-h-screen bg-gray-50 dark:bg-gray-800 transition-colors duration-200 py-5">
 					<Header />
 
 					<main className="pt-52 px-4">
