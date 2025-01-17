@@ -86,7 +86,7 @@ export default function ContactForm() {
 					<Linkedin size={24} />
 				</a>
 				<a
-					href="/CV-2024-Baczkiewicz-Damien-Développeur-Web.pdf"
+					href="/CV-Baczkiewicz-Damien-Développeur-Web.pdf"
 					download
 					className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
 					title="Télécharger mon CV"
