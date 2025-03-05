@@ -51,4 +51,12 @@ export const projects: Project[] = [
 		technologies: ["React", "TypeScript", "CSS"],
 		github: "https://github.com/DamBKZ/Reunite-Resolve",
 	},
+	{
+		id: 7,
+		title: "Todo List",
+		description: "Projet réalisé en 72h pour apprendre Next.JS et Drizzle ORM",
+		image: "/images/TodoList.png",
+		technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL", "Drizzle ORM"],
+		github: "https://github.com/DamBKZ/TodoList",
+	},
 ];

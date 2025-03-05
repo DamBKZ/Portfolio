@@ -41,4 +41,12 @@ export const technologies: Technology[] = [
 		name: "Git",
 		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
 	},
+	{
+		name: "Next.js",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+	},
+	{
+		name: "Drizzle",
+		icon: "/drizzle.svg",
+	},
 ];

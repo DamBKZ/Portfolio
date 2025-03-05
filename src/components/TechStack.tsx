@@ -1,8 +1,8 @@
 import { technologies } from "../data/technologies";
 
 export default function TechStack() {
-	const firstRow = technologies.slice(0, 5);
-	const secondRow = technologies.slice(5);
+	const firstRow = technologies.slice(0, 6);
+	const secondRow = technologies.slice(6);
 
 	return (
 		<div className="flex flex-col space-y-4">
