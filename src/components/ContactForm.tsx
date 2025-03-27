@@ -87,7 +87,7 @@ export default function ContactForm() {
 				</a>
 				<a
 					href="/CV.pdf"
-					download
+					download="Cv Baczkiewicz Damien Développeur Web"
 					className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
 					title="Télécharger mon CV"
 				>
