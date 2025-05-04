@@ -40,7 +40,7 @@ export const projects: Project[] = [
 		title: "Cartocodile",
 		description: "Projet de jeu de Géographie",
 		image: "/images/Cartocodile.png",
-		technologies: ["React", "TypeScript", "TailwindCSS"],
+		technologies: ["React", "TypeScript", "TailwindCSS", "Express"],
 		github: "https://github.com/DamBKZ/Projet2-Cartocodile",
 	},
 	{
@@ -48,7 +48,7 @@ export const projects: Project[] = [
 		title: "Reunite & Resolve",
 		description: "Projet post-apocalyptique réalisé en 30 heures",
 		image: "/images/Protojam.png",
-		technologies: ["React", "TypeScript", "CSS"],
+		technologies: ["React", "TypeScript", "CSS", "Express"],
 		github: "https://github.com/DamBKZ/Reunite-Resolve",
 	},
 	{
@@ -56,7 +56,16 @@ export const projects: Project[] = [
 		title: "Todo List",
 		description: "Projet réalisé en 72h pour apprendre Next.JS et Drizzle ORM",
 		image: "/images/TodoList.png",
-		technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL", "Drizzle ORM"],
+		technologies: ["React", "TypeScript", "CSS", "MySQL", "Express"],
 		github: "https://github.com/DamBKZ/TodoList",
+	},
+	{
+		id: 8,
+		title: "Intra_Sense",
+		description:
+			"Projet final pour le titre de développeur web, gestion de prise de décisions",
+		image: "/images/IntraSense.png",
+		technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL", "Drizzle ORM"],
+		github: "https://github.com/AmandineGrardLaurent/Intra_Sense",
 	},
 ];
