@@ -65,7 +65,7 @@ export const projects: Project[] = [
 		description:
 			"Projet final pour le titre de développeur web, gestion de prise de décisions",
 		image: "/images/IntraSense.png",
-		technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL", "Drizzle ORM"],
+		technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL", "Express"],
 		github: "https://github.com/AmandineGrardLaurent/Intra_Sense",
 	},
 ];
