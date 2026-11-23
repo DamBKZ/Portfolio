@@ -10,10 +10,11 @@ export default function About() {
 			<h2 className="text-3xl font-bold mb-8 text-center dark:text-white">
 				{t("about.title")}
 			</h2>
-			{descriptionParagraphs.map((paragraph) => (
+			{descriptionParagraphs.map((paragraph, index) => (
 				<p
-					key={paragraph.slice(0, 20)}
-					className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-justify mb-4"
+					// Le texte est statique : l'index est une clé suffisante ici.
+					key={index}
+					className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed text-justify hyphens-auto"
 				>
 					{paragraph}
 				</p>

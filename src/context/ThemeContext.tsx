@@ -1,25 +1,28 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import type { ThemeContextType, ThemeProviderProps } from "../lib/definitions";
+import type { ThemeContextType, ProviderProps } from "../lib/definitions";
+import { readPreference, savePreference } from "../lib/storage";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: ThemeProviderProps) {
-	const [darkMode, setDarkMode] = useState(() => {
-		const saved = localStorage.getItem("darkMode");
-		return saved ? JSON.parse(saved) : false;
-	});
+function getInitialTheme(): boolean {
+	const saved = readPreference("darkMode");
+	if (saved !== null) return saved === "true";
+	// Pas de choix enregistré : on suit le réglage du système.
+	return window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
+}
+
+export function ThemeProvider({ children }: ProviderProps) {
+	const [darkMode, setDarkMode] = useState(getInitialTheme);
 
 	useEffect(() => {
-		localStorage.setItem("darkMode", JSON.stringify(darkMode));
-		if (darkMode) {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
+		document.documentElement.classList.toggle("dark", darkMode);
 	}, [darkMode]);
 
 	const toggleDarkMode = () => {
-		setDarkMode(!darkMode);
+		setDarkMode((current) => {
+			savePreference("darkMode", String(!current));
+			return !current;
+		});
 	};
 
 	return (

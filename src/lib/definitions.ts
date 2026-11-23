@@ -1,33 +1,37 @@
+export type Language = "fr" | "en";
+
 export type Project = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  link?: string;
-  github?: string;
+	id: number;
+	title: string;
+	description: Record<Language, string>;
+	image?: string;
+	technologies: string[];
+	link?: string;
+	github?: string;
 };
 
 export type Technology = {
-  name: string;
-  icon: string;
+	name: string;
+	icon: string;
+	// Icône noire : on l'inverse en mode sombre pour qu'elle reste visible.
+	invertOnDark?: boolean;
 };
 
 export type ThemeContextType = {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
+	darkMode: boolean;
+	toggleDarkMode: () => void;
 };
 
-export type ThemeProviderProps = {
-  children: React.ReactNode;
+export type ProviderProps = {
+	children: React.ReactNode;
 };
 
 export type LanguageContextType = {
-  language: 'fr' | 'en';
-  toggleLanguage: () => void;
-  t: (key: string) => string;
+	language: Language;
+	toggleLanguage: () => void;
+	t: (key: string) => string;
 };
 
 export type Translations = {
-  [key: string]: string;
+	[key: string]: string;
 };

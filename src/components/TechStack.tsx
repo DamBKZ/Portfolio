@@ -1,33 +1,19 @@
 import { technologies } from "../data/technologies";
 
 export default function TechStack() {
-	const firstRow = technologies.slice(0, 6);
-	const secondRow = technologies.slice(6);
-
+	// 16 icônes : 2 lignes de 8 sur grand écran, 4 lignes de 4 sur mobile.
 	return (
-		<div className="flex flex-col space-y-4">
-			<div className="flex items-center space-x-6">
-				{firstRow.map((tech) => (
+		<ul className="grid grid-cols-4 sm:grid-cols-8 gap-5 justify-items-center">
+			{technologies.map((tech) => (
+				<li key={tech.name}>
 					<img
-						key={tech.name}
 						src={tech.icon}
 						alt={tech.name}
 						title={tech.name}
-						className="w-8 h-8 transition-transform hover:scale-110"
+						className={`w-9 h-9 transition-transform hover:scale-110 ${tech.invertOnDark ? "dark:invert" : ""}`}
 					/>
-				))}
-			</div>
-			<div className="flex items-center space-x-6">
-				{secondRow.map((tech) => (
-					<img
-						key={tech.name}
-						src={tech.icon}
-						alt={tech.name}
-						title={tech.name}
-						className="w-8 h-8 transition-transform hover:scale-110"
-					/>
-				))}
-			</div>
-		</div>
+				</li>
+			))}
+		</ul>
 	);
 }

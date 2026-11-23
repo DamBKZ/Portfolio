@@ -1,85 +1,67 @@
-import { Link } from "react-scroll";
+import { Link, animateScroll } from "react-scroll";
 import { Moon, Sun, Languages } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
-import TechStack from "./TechStack";
+
+// Hauteur du header fixe, utilisée pour décaler le défilement vers les sections.
+export const HEADER_OFFSET = -72;
+
+const sections = ["about", "projects", "contact"] as const;
 
 export default function Header() {
-	const { t, toggleLanguage } = useLanguage();
+	const { t, language, toggleLanguage } = useLanguage();
 	const { darkMode, toggleDarkMode } = useTheme();
 
 	return (
-		<header className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
-			<section className="container mx-auto px-4 py-6">
-				<section className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-0">
-					<section className="justify-self-center md:justify-self-start">
-						<TechStack />
-					</section>
+		<header className="fixed w-full top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur shadow-sm">
+			<div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
+				<button
+					type="button"
+					onClick={() => animateScroll.scrollToTop({ duration: 500 })}
+					className="flex items-center gap-2 font-bold dark:text-white"
+				>
+					<img src="/Logo.png" alt="" className="w-8 h-8" />
+					<span className="hidden sm:inline">Damien Baczkiewicz</span>
+				</button>
 
-					<section className="flex flex-col items-center text-center">
-						<img
-							src="/images/Profile.jpg"
-							alt="Damien Baczkiewicz"
-							className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 object-cover border-4 border-blue-500 dark:border-blue-400 shadow-lg"
-						/>
-						<h1 className="text-2xl md:text-3xl font-bold dark:text-white mb-1">
-							DAMIEN BACZKIEWICZ
-						</h1>
-						<p className="text-lg md:text-xl text-gray-600 dark:text-gray-300">
-							{t("developer")}
-						</p>
-					</section>
-
-					<nav className="flex flex-wrap justify-center md:justify-end items-center space-x-4 md:space-x-6">
+				<nav className="flex items-center gap-3 sm:gap-6">
+					{sections.map((section) => (
 						<Link
-							to="about"
+							key={section}
+							to={section}
 							spy={true}
 							smooth={true}
-							offset={-250}
+							offset={HEADER_OFFSET}
 							duration={500}
-							className="cursor-pointer text-sm md:text-base hover:text-blue-600 dark:text-white"
+							activeClass="text-blue-600 dark:text-blue-400"
+							className="cursor-pointer text-sm sm:text-base hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
 						>
-							{t("about")}
+							{t(section)}
 						</Link>
-						<Link
-							to="projects"
-							spy={true}
-							smooth={true}
-							offset={-300}
-							duration={500}
-							className="cursor-pointer text-sm md:text-base hover:text-blue-600 dark:text-white"
-						>
-							{t("projects")}
-						</Link>
-						<Link
-							to="contact"
-							spy={true}
-							smooth={true}
-							offset={-250}
-							duration={500}
-							className="cursor-pointer text-sm md:text-base hover:text-blue-600 dark:text-white"
-						>
-							{t("contact")}
-						</Link>
+					))}
 
-						<button
-							type="button"
-							onClick={toggleDarkMode}
-							className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-						>
-							{darkMode ? <Sun className="text-white" /> : <Moon />}
-						</button>
+					<button
+						type="button"
+						onClick={toggleDarkMode}
+						aria-label={t("theme.toggle")}
+						title={t("theme.toggle")}
+						className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white"
+					>
+						{darkMode ? <Sun size={20} /> : <Moon size={20} />}
+					</button>
 
-						<button
-							type="button"
-							onClick={toggleLanguage}
-							className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-						>
-							<Languages className={darkMode ? "text-white" : ""} />
-						</button>
-					</nav>
-				</section>
-			</section>
+					<button
+						type="button"
+						onClick={toggleLanguage}
+						aria-label={t("language.toggle")}
+						title={t("language.toggle")}
+						className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white flex items-center gap-1 text-sm font-medium"
+					>
+						<Languages size={20} />
+						<span className="uppercase">{language === "fr" ? "en" : "fr"}</span>
+					</button>
+				</nav>
+			</div>
 		</header>
 	);
 }

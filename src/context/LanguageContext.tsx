@@ -1,31 +1,40 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type {
+	Language,
 	LanguageContextType,
-	ThemeProviderProps,
+	ProviderProps,
 	Translations,
 } from "../lib/definitions";
+import { readPreference, savePreference } from "../lib/storage";
 import frTranslations from "../data/translations/fr.json";
 import enTranslations from "../data/translations/en.json";
+
+const translations: Record<Language, Translations> = {
+	fr: frTranslations,
+	en: enTranslations,
+};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
 	undefined,
 );
 
-export function LanguageProvider({ children }: ThemeProviderProps) {
-	const [language, setLanguage] = useState<"fr" | "en">("fr");
+function getInitialLanguage(): Language {
+	return readPreference("language") === "en" ? "en" : "fr";
+}
 
-	const translations: Record<"fr" | "en", Translations> = {
-		fr: frTranslations,
-		en: enTranslations,
-	};
+export function LanguageProvider({ children }: ProviderProps) {
+	const [language, setLanguage] = useState<Language>(getInitialLanguage);
+
+	useEffect(() => {
+		document.documentElement.lang = language;
+		savePreference("language", language);
+	}, [language]);
 
 	const toggleLanguage = () => {
-		setLanguage(language === "fr" ? "en" : "fr");
+		setLanguage((current) => (current === "fr" ? "en" : "fr"));
 	};
 
-	const t = (key: string): string => {
-		return translations[language][key] || key;
-	};
+	const t = (key: string): string => translations[language][key] ?? key;
 
 	return (
 		<LanguageContext.Provider value={{ language, toggleLanguage, t }}>
